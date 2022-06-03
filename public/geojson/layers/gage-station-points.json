@@ -1,0 +1,94 @@
+{
+  "ibwc": [
+    {
+      "coords": [-99.151297, 26.530512],
+      "name": "13187"
+    },
+    {
+      "coords": [-99.08364, 26.39738],
+      "name": "13186"
+    },
+    {
+      "coords": [-98.80615, 26.36809],
+      "name": "21591"
+    },
+    {
+      "coords": [-98.80900, 26.38812],
+      "name": "13104"
+    },
+    {
+      "coords": [-98.78882, 26.36113],
+      "name": "13185"
+    },
+    {
+      "coords": [-98.79528, 26.36015],
+      "name": "13103"
+    },
+    {
+      "coords": [-98.79773, 26.35660],
+      "name": "21749"
+    },
+    {
+      "coords": [-98.56515, 26.23984],
+      "name": "13184"
+    },
+    {
+      "coords": [-98.38736, 26.17958],
+      "name": "20698"
+    },
+    {
+      "coords": [-98.36618, 26.16980],
+      "name": "20696"
+    },
+    {
+      "coords": [-98.37925, 26.15696],
+      "name": "21012"
+    },
+    {
+      "coords": [-98.33181, 26.13261],
+      "name": "13664"
+    },
+    {
+      "coords": [-98.27088, 26.09476],
+      "name": "13181"
+    },
+    {
+      "coords": [-98.20629, 26.06746],
+      "name": "15808"
+    },
+    {
+      "coords": [-98.18174, 26.06260],
+      "name": "13180"
+    },
+    {
+      "coords": [-97.95117, 26.06222],
+      "name": "17247"
+    }
+  ],
+  "tceq": [
+    {
+      "coords": [-99.0203, 26.4067],
+      "name": "<strong>C767</strong><br>Rio Grande at Roma TX"
+    },
+    {
+      "coords": [-98.7961, 26.3494],
+      "name": "<strong>C796</strong><br>Rio Grande ds of Arroyo Los Olmos"
+    },
+    {
+      "coords": [-98.4058, 26.1833],
+      "name": "<strong>C791</strong><br>Rio Grande near United ID"
+    },
+    {
+      "coords": [-98.362923, 26.172055],
+      "name": "<strong>C792</strong><br>Rio Grande near Hidalgo ID"
+    },
+    {
+      "coords": [-98.334406, 26.144494],
+      "name": "<strong>C736</strong><br>Anzalduas Dam Pier 4"
+    },
+    {
+      "coords": [-97.9011, 26.0614],
+      "name": "<strong>C793</strong><br>Rio Grande near HC&CC ID"
+    }
+  ]
+}

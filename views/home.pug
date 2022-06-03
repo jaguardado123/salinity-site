@@ -1,0 +1,41 @@
+extends base.pug
+
+block styles
+  link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
+  link(rel="stylesheet" href="/mod/ol/ol.css")
+  link(rel="stylesheet" href="/mod/ol-ls/ol-layerswitcher.css")
+  link(rel="stylesheet" href="/mod/ol-cm/ol-contextmenu.min.css")
+  link(rel="stylesheet" href="/mod/ol-pu/ol-popup.css")
+  link(rel="stylesheet" href="/stylesheets/sidebar.min.css")
+  link(rel="stylesheet" href="/stylesheets/map-style.css")
+  style(type='text/css').
+    .sidebar-p {
+      color: #696969;
+    }
+    .sidebar-h5 {
+      color:#778ba5;
+      font-weight: bold;
+    }
+
+block body
+  #sidebar.sidebar.collapsed
+    .sidebar-tabs
+      ul(role="tablist")
+        li
+          a(href="#home" role="tab")
+            i.fa.fa-bars
+        li
+          a(href="#nav" role="tab")
+            i.fa.fa-car
+    .sidebar-content
+      .sidebar-pane#home
+        h1.sidebar-header About Us
+
+      .sidebar-pane#nav
+        h1.sidebar-header Navigation
+        p#nav-dir Generate a route to see the changes here!
+  #map
+
+block scripts
+  //- Remember to move this to public!!!
+  script(src="/javascripts/map.js" type="application/javascript")

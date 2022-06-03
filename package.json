@@ -1,0 +1,42 @@
+{
+  "name": "civil-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "scripts/dev.sh",
+    "build": "scripts/build.sh",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "node-fetch": "^2.6.1",
+    "node-sass": "^4.14.1",
+    "node-sass-middleware": "^0.11.0",
+    "ol": "^6.5.0",
+    "ol-contextmenu": "^4.1.0",
+    "ol-layerswitcher": "^3.8.3",
+    "ol-popup": "^4.0.0",
+    "openrouteservice-js": "^0.1.16",
+    "popper.js": "^1.16.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.2",
+    "parcel-bundler": "^1.12.4",
+    "supertest": "^4.0.2"
+  },
+  "engines": {
+    "node": "12.18.3"
+  }
+}
