@@ -49,18 +49,113 @@ export const tceqGageStationLocationsLayer = new VectorLayer({
     })
 });
 
-// Rio Grande River layer.
-export const riogranderiver = new TileLayer({
-    title: 'Rio Grande River',
-    visible: true,
-    source: new TileWMS({
-        url: 'http://localhost:8080/geoserver/cite/wms',
-        params: {
-            'LAYERS': 'cite:RioGrandeRiver',
-            'TILED': 'true'
-        },
-        imageSmoothing: true,
+const canvas = document.createElement('canvas');
+const context = canvas.getContext('2d');
+const gradient = context.createLinearGradient(0, 0, 1024, 0);
+gradient.addColorStop(0, 'red');
+gradient.addColorStop(1, 'yellow');
+
+export const c736 = new VectorLayer({
+    title: 'C736',
+    source: new VectorSource({
+        format: new GeoJson(),
+        url: '/geojson/layers/c736.geojson',
+        startegy: bbox
     }),
+    style: new Style({
+        stroke: new Stroke({
+            color: gradient,
+            width: 6
+        }),
+    })
 });
 
+export const c767 = new VectorLayer({
+    title: 'C767',
+    source: new VectorSource({
+        format: new GeoJson(),
+        url: '/geojson/layers/c767.geojson',
+        startegy: bbox
+    }),
+    style: new Style({
+        stroke: new Stroke({
+            color: gradient,
+            width: 6
+        }),
+    })
+});
 
+export const c789 = new VectorLayer({
+    title: 'C789',
+    source: new VectorSource({
+        format: new GeoJson(),
+        url: '/geojson/layers/c789.geojson',
+        startegy: bbox
+    }),
+    style: new Style({
+        stroke: new Stroke({
+            color: gradient,
+            width: 6
+        }),
+    })
+});
+
+export const c791 = new VectorLayer({
+    title: 'C791',
+    source: new VectorSource({
+        format: new GeoJson(),
+        url: '/geojson/layers/c791.geojson',
+        startegy: bbox
+    }),
+    style: new Style({
+        stroke: new Stroke({
+            color: gradient,
+            width: 6
+        }),
+    })
+});
+
+export const c792 = new VectorLayer({
+    title: 'C792',
+    source: new VectorSource({
+        format: new GeoJson(),
+        url: '/geojson/layers/c792.geojson',
+        startegy: bbox
+    }),
+    style: new Style({
+        stroke: new Stroke({
+            color: gradient,
+            width: 6
+        }),
+    })
+});
+
+export const c793 = new VectorLayer({
+    title: 'C793',
+    source: new VectorSource({
+        format: new GeoJson(),
+        url: '/geojson/layers/c793.geojson',
+        startegy: bbox
+    }),
+    style: new Style({
+        stroke: new Stroke({
+            color: gradient,
+            width: 6
+        }),
+    })
+});
+
+export const c796 = new VectorLayer({
+    title: 'C796',
+    source: new VectorSource({
+        format: new GeoJson(),
+        url: '/geojson/layers/c796.geojson',
+        startegy: bbox
+    }),
+    style: new Style({
+        stroke: new Stroke({
+            color: gradient,
+            width: 6
+        }),
+    })
+});
