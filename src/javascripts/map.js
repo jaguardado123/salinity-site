@@ -46,7 +46,13 @@ const map = new Map({
             title: 'TCEQ',
             fold: 'open',
             layers: [
-                l.riogranderiver,
+                l.c736,
+                l.c767,
+                l.c789,
+                l.c791,
+                l.c792,
+                l.c793,
+                l.c796,
                 l.tceqGageStationLocationsLayer,
             ]
         })
@@ -59,35 +65,6 @@ const map = new Map({
 
 const popup = new Popup();
 map.addOverlay(popup);
-
-// Map destination marker
-map.on('singleclick', (e) => {
-    let feature = map.forEachFeatureAtPixel(e.pixel, (feature) => { return feature; });
-    if (feature && feature.get('name')) {
-        let featureName = feature.get('name');
-        let address = feature.get('address');
-
-        popup.show(feature.getGeometry().getCoordinates(), '<div><h5>' + featureName + '</h5><p>' + address + '</p></div>');
-        return;
-    }
-
-    let coords = map.getCoordinateFromPixel(e.pixel);
-    let marker = new Feature(new Point(coords));
-
-    let markerSource = l.markersLayer.getSource();
-    if (markerSource.getFeatures().length >= 2)
-        markerSource.clear();
-
-    if (markerSource.getFeatures().length === 1) {
-        const newIcon = new Style({ image: new Icon({ anchor: [0.5, 1], src: '/images/tceq-marker.png' }) });
-        marker.setStyle(newIcon);
-        markerSource.addFeature(marker);
-    }
-    else
-        markerSource.addFeature(marker);
-    if (markerSource.getFeatures().length === 2)
-        n.beginNav(null, null);
-});
 
 // Plot TCEQ Gage Sites in RGV
 fetch('/geojson/layers/gage-station-points.json')
