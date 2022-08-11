@@ -70,21 +70,21 @@ router.post('/api/riogranderiver', function(req, res, next) {
                 console.log(start)
                 // Query from database
                 con.query(
-                    "SELECT c736.datetime, c736_swt, c736_spc, c736_tds, " + 
-                    "c767_swt, c767_spc, c767_tds, " +
-                    "c789_swt, c789_spc, c789_tds, " + 
-                    "c791_swt, c791_spc, c791_tds, " +
+                    "SELECT c767.datetime, c767_swt, c767_spc, c767_tds, " + 
+                    "c796_swt, c796_spc, c796_tds, " +
+                    "c791_swt, c791_spc, c791_tds, " + 
                     "c792_swt, c792_spc, c792_tds, " +
+                    "c736_swt, c736_spc, c736_tds, " +
                     "c793_swt, c793_spc, c793_tds, " +
-                    "c796_swt, c796_spc, c796_tds " +
-                    "FROM c736, c767, c789, c791, c792, c793, c796 WHERE " +
-                    "c736.datetime = c767.datetime AND " +
-                    "c736.datetime = c789.datetime AND " +
-                    "c736.datetime = c791.datetime AND " + 
-                    "c736.datetime = c792.datetime AND " +
-                    "c736.datetime = c793.datetime AND " +
-                    "c736.datetime = c796.datetime AND " +
-                    "c736.DATETIME BETWEEN '" + start + "' AND '" + end + "'", function(err, result, fields) {
+                    "c789_swt, c789_spc, c789_tds " +
+                    "FROM c767, c796, c791, c792, c736, c793, c789 WHERE " +
+                    "c767.datetime = c796.datetime AND " +
+                    "c767.datetime = c791.datetime AND " +
+                    "c767.datetime = c792.datetime AND " + 
+                    "c767.datetime = c736.datetime AND " +
+                    "c767.datetime = c793.datetime AND " +
+                    "c767.datetime = c789.datetime AND " +
+                    "c767.DATETIME BETWEEN '" + start + "' AND '" + end + "'", function(err, result, fields) {
                     if(err) {
                         res.send({
                             'status': "error",
@@ -121,7 +121,8 @@ router.get('/api/help', function(req, res, next) {
         "available_dates": {
             "start": "2019-01-01",
             "end": year + "-" + month + "-" + day
-        } 
+        },
+        "disclaimer": "Please wait AT LEAST 30 seconds before opening the downloaded csv file to ensure that all data appears as expected."
     })
 });
 
