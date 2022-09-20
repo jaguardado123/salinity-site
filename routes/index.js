@@ -1,6 +1,7 @@
 var express = require('express');
 const fs = require("fs");
 var router = express.Router();
+const basicAuth = require('basic-auth');
 var mysql = require('mysql');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
@@ -9,23 +10,46 @@ router.get('/', function(req, res, next) {
     res.render('home');
 });
 
+// Convert datetime with timezone into YYYY:mm:dd HH:MM:ss string format.
+function formatDate(db_output) {
+    let day, month, year = '';
+    let hour, min, sec = '';
+    for(var i = 0; i < db_output.length; i++) {
+        day = ("0" + (db_output[i]['datetime'].getDate())).slice(-2);
+        month = ("0" + (db_output[i]['datetime'].getMonth() + 1)).slice(-2);
+        year = db_output[i]['datetime'].getFullYear();
+        hour = ("0" + db_output[i]['datetime'].getHours()).slice(-2);
+        min = ("0" + db_output[i]['datetime'].getMinutes()).slice(-2);
+        sec = ("0" + db_output[i]['datetime'].getSeconds()).slice(-2);
+        db_output[i]['datetime'] = year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec;
+    }
+    return db_output;
+}
 
 // REST API for rio grande river.
 router.post('/api/riogranderiver', function(req, res, next) {
 
+    var key = basicAuth(req);
     // Verify key
-    if ( req.header('key') != 'password') {
+    if ( key.pass != 'password') {
         res.send({
             "status": "error",
             "error": "Invalid key."
-        })
+        });
+    }
+    // Verify start and end date were sent.
+    else if (!req.body.start || !req.body.end) {
+        res.send({
+            "status": "error",
+            "error": "Missing start or end date."
+        });
     }
     else {
         //Connect to our database.
         var con = mysql.createConnection({
             host: "localhost",
             user: "salty",
-            password: "Salty#2022!",
+            password: "Salty#2022",
             database: "tceq"
         });
 
@@ -39,8 +63,8 @@ router.post('/api/riogranderiver', function(req, res, next) {
             }
             else {
                 // Get user parameters.
-                var start = req.query.start;
-                var end = req.query.end;
+                var start = req.body.start;
+                var end = req.body.end + " 23:00:00";
 
                 // Table names from our database.
                 stations = ["c767", "c796", "c791", "c792", "c736", "c793", "c789"];
@@ -103,8 +127,10 @@ router.post('/api/riogranderiver', function(req, res, next) {
                                 {id: 'c789_tds', title: 'C789: Total Dissolved Solids'},
                             ]
                         });
+                        // Format date value.
+                        output = formatDate(result);
                         // Write data into CSV file
-                        csvWriter.writeRecords(result)
+                        csvWriter.writeRecords(output);
                     }
                 });
             }
