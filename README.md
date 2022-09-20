@@ -6,6 +6,7 @@ The website will be accessible through https://lrgsf.utrgv.edu .
 
 To run the salinity-site you first need to install the following software.
 * NodeJs
+* MySQL
 
 ## NodeJs
 
@@ -33,3 +34,13 @@ npm start
 ```
 
 Open up your browser and go to http://localhost:3000 to view the salinity-site or LRGSF website running on your local computer.
+
+## MySQL
+
+To install MySQL you need to follow the steps found here https://www.geeksforgeeks.org/how-to-install-mysql-on-linux/.
+If you are running Ubuntu you can execute the following commands.
+```bash
+sudo apt install mysql-server
+sudo mysql_secure_installation
+```
+Follow the prompted instructions to set up your MySQL server.
