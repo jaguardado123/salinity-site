@@ -49,7 +49,7 @@ router.post('/api/riogranderiver', function(req, res, next) {
         var con = mysql.createConnection({
             host: "localhost",
             user: "salty",
-            password: "Salty#2022",
+            password: "Salty#2022!",
             database: "tceq"
         });
 
