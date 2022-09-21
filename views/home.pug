@@ -24,16 +24,13 @@ block body
         li
           a(href="#home" role="tab")
             i.fa.fa-bars
-        li
-          a(href="#nav" role="tab")
-            i.fa.fa-car
     .sidebar-content
       .sidebar-pane#home
         h1.sidebar-header About Us
-
-      .sidebar-pane#nav
-        h1.sidebar-header Navigation
-        p#nav-dir Generate a route to see the changes here!
+          span.sidebar-close
+            i.fa.fa-caret-left
+        p.sidebar-p
+          | The <strong>Lower Rio Grande Salinity Forecast (LRGSF)</strong> site aims to provide the residents living in the Rio Grande Valley (RGV) accurate past, current, and future salinity values of the Rio Grande River. Salinity levels can have a detramental effect on our ecosystem and it is important that we have a system in place to monitor those levels.
   #map
 
 block scripts
