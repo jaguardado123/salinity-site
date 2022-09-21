@@ -3,7 +3,7 @@
  */
 
 var app = require('./app');
-var debug = require('debug')('civil-site:server');
+var debug = require('debug')('salinity-site:server');
 var http = require('http');
 
 /**
