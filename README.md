@@ -1,14 +1,17 @@
 # Lower Rio Grande Salinity Forecast
 Website to display TCEQ sites in the Rio Grande Valley and show the lower Rio Grande salinity forecast (LRGSF) levels.
-The website will be accessible through https://lrgsf.utrgv.edu .
+
+![Website Image](public/images/website-layout.png)
+
+The website will be accessible through https://lrgsf.utrgv.edu.
 
 ## Installation
 
-To run the salinity-site you first need to install the following software.
+The LRGSF app salinity-site is designed to run on a Linux machine. To run the salinity-site you first need to install the following software.
 * NodeJs
 * MySQL
 
-## NodeJs
+### NodeJs
 
 To install NodeJs you need to follow the steps found here https://nodejs.dev/learn/how-to-install-nodejs.
 If you are running Ubuntu you can execute the following commands.
@@ -35,7 +38,7 @@ npm start
 
 Open up your browser and go to http://localhost:3000 to view the salinity-site or LRGSF website running on your local computer.
 
-## MySQL
+### MySQL
 
 To install MySQL you need to follow the steps found here https://www.geeksforgeeks.org/how-to-install-mysql-on-linux/.
 If you are running Ubuntu you can execute the following commands.
