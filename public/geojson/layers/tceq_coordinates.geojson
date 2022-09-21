@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "tceq_coordinates",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "TCEQ C767", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ -99.016666666666666, 26.4, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TCEQ C791", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ -98.40525277777779, 26.183280555555559, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TCEQ C796", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ -98.796822222222218, 26.354144444444451, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TCEQ C792", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ -98.36405, 26.171177777777778, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TCEQ C736", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ -98.334491666666665, 26.138088888888891, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TCEQ C793", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ -97.899983333333324, 26.061572222222221, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TCEQ C789", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ -97.764908333333338, 26.045225, 0.0 ] } }
+]
+}

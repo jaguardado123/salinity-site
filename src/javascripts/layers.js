@@ -15,6 +15,7 @@ import GeoJson from 'ol/format/GeoJSON';
 import { bbox } from 'ol/loadingstrategy';
 
 import { Style, Fill, Icon, Stroke } from 'ol/style';
+import { scale } from 'ol/coordinate';
 
 // Open Street Maps layer.
 export const osmMap = new TileLayer({
@@ -36,8 +37,8 @@ export const satelliteMap = new TileLayer({
 });
 
 // TCEQ Gage Site markers layer.
-export const tceqGageStationLocationsLayer = new VectorLayer({
-    title: "Gage Sites <a href='/gagestations/TCEQ.jpg' download>Download JPG</a>",
+export const station_coordinates = new VectorLayer({
+    title: "Station Coordinates<br/><a href='/gagestations/TCEQ.jpg' download>Download JPG</a>",
     visible: true,
     source: new VectorSource({
         strategy: bbox
@@ -45,6 +46,9 @@ export const tceqGageStationLocationsLayer = new VectorLayer({
     style: new Style({
         image: new Icon({
             src: '/images/tceq-marker.png',
+            anchorXUnits: 'fraction',
+            anchorYUnits: 'fraction',
+            scale: 0.5
         })
     })
 });
