@@ -1,5 +1,5 @@
 # Lower Rio Grande Salinity Forecast
-Website to display TCEQ sites in the Rio Grande Valley and show the lower Rio Grande salinity forecast (LRGSF) levels.
+Website to display TCEQ stations in the Rio Grande Valley and show the lower Rio Grande salinity forecast (LRGSF) levels. The LRGSF also functions as a REST API to provide users with hourly water quality data data from TCEQ stations.
 
 ![Website Image](public/images/website-layout.png)
 
@@ -41,9 +41,19 @@ Open up your browser and go to http://localhost:3000 to view the salinity-site o
 ### MySQL
 
 To install MySQL you need to follow the steps found here https://www.geeksforgeeks.org/how-to-install-mysql-on-linux/.
-If you are running Ubuntu you can execute the following commands.
+If you are running Ubuntu you can execute the following commands. Then follow the prompted instructions to set up your MySQL server.
 ```bash
 sudo apt install mysql-server
 sudo mysql_secure_installation
 ```
-Follow the prompted instructions to set up your MySQL server.
+Once you have set up your MySQL server, create a new database and import the tables from the tceq_database.sql file. You can use the following command.
+```bash
+mysql -u USER_NAME -p DATABASE_NAME < tceq_database.sql
+```
+Next, create a **.env** file in the project directory where the package-lock.json and package.json files are found. Add the following variables and assign them the values according to your preference and MySQL set up.
+```bash
+DB_NAME="YourDatabaseName"
+DB_USER="YourDatabaseUsername"
+DB_PASS="YourUserPassword"
+API_KEY="YourPasskey"
+```
