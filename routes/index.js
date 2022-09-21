@@ -31,7 +31,7 @@ router.post('/api/riogranderiver', function(req, res, next) {
 
     var key = basicAuth(req);
     // Verify key
-    if ( key.pass != 'password') {
+    if ( key.pass != process.env.API_KEY) {
         res.send({
             "status": "error",
             "error": "Invalid key."
@@ -48,9 +48,9 @@ router.post('/api/riogranderiver', function(req, res, next) {
         //Connect to our database.
         var con = mysql.createConnection({
             host: "localhost",
-            user: "salty",
-            password: "Salty#2022!",
-            database: "tceq"
+            user: process.env.DB_USER,
+            password: process.env.DB_PASS,
+            database: process.env.DB_NAME
         });
 
         con.connect(function(err) {
