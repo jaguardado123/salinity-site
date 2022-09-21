@@ -96,7 +96,7 @@ router.post('/api/riogranderiver', function(req, res, next) {
                         // Send file link to user.
                         res.send({
                             "status": "success",
-                            "result": "http://129.113.4.143/riogranderiver/" + filename
+                            "result": "http://localhost:3000/riogranderiver/" + filename
                         });
 
                         // Set CSV column id/key.
