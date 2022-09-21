@@ -57,3 +57,18 @@ DB_USER="YourDatabaseUsername"
 DB_PASS="YourUserPassword"
 API_KEY="YourPasskey"
 ```
+
+## API
+The LRGSF API provides users with hourly water quantity data of the Rio Grande River from the TCEQ stations. We have a web scrapper set up in our server that collects data daily to ensure our API has the latest data.
+
+To test our API we recommend you use **PostMan** https://www.postman.com/, using the PostMan app makes it easier to make requests to our API.
+
+### About
+By making a get request to http://localhost:3000/api/help users can get a sense of how to use the API.
+![Get Request](public/images/get_request.png)
+The user must send a start and end date get the water quality data during that period. The API only provides data as far back as January 01, 2019, since this is the earliest data collected by the TCEQ deparment.
+
+### Request Data
+By making a post request to http://localhost:3000/api/riogranderiver users can download their desired timeframe of data by following the link returned by the API.
+![Post Request](public/images/post_request.png)
+Users must include the start and end date in the body section of PostMan in JSON format and include the API Key in Authorization tab using Basic Auth type.
